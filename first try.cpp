@@ -1,3 +1,7 @@
+//In The Name Of God
+//first try to develope a simple compiler with c++
+
+
 //library calls: 
 
 #include <iostream>
