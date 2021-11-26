@@ -1,5 +1,6 @@
 //In The Name of God
 //Scanner for compiler
+
 /*
 Todo:
 	✅word detector
@@ -24,43 +25,43 @@ class Node
 {
 
 
-public:
+	public:
 
-	string name;
-	Node* info;
-	Node* next;
+		string name;
+		Node* info;
+		Node* next;
 
-	//4 constructors:
-	//1
-	Node()
-	{
-		this->name = "";
-		this->info = NULL;
-		this->next = NULL;
+		//4 constructors:
+		//1
+		Node()
+		{
+			this->name = "";
+			this->info = NULL;
+			this->next = NULL;
 
-	}
-	//2    
-	Node(string name)
-	{
-		this->name = name;
-		this->info = NULL;
-		this->next = NULL;
-	}
-	//3
-	Node(string name, Node* info)
-	{
-		this->name = name;
-		this->info = info;
-		this->next = NULL;
+		}
+		//2    
+		Node(string name)
+		{
+			this->name = name;
+			this->info = NULL;
+			this->next = NULL;
+		}
+		//3
+		Node(string name, Node* info)
+		{
+			this->name = name;
+			this->info = info;
+			this->next = NULL;
 
-	}
-	//4
-	Node(string name, Node* info, Node* next)
-	{
-		this->name = name;
-		this->info = info;
-		this->next = next;
-	}
+		}
+		//4
+		Node(string name, Node* info, Node* next)
+		{
+			this->name = name;
+			this->info = info;
+			this->next = next;
+		}
 
 };
 
@@ -93,6 +94,7 @@ public:
 		return false;
 
 	}
+
 	//function for insert new node to linked list :
 	void insertNode(string name, Node* info = NULL)
 	{
@@ -106,6 +108,7 @@ public:
 		if (head == NULL)
 		{
 			head = newNode;
+			head->info=info;
 			return;
 		}
 
@@ -119,7 +122,7 @@ public:
 
 
 		temp->next = newNode;
-
+		temp->next->info=info;
 
 	}
 	//function for print all the nodes :
@@ -233,7 +236,7 @@ class ScannerClass
 				temp[ch_counter++]=ch;
 				this->file_pointer++;
 				//isspace is true when it detect spaces
-				if(isspace(ch))
+				if(isspace(ch)||symbol_detector(ch))
 				{	
 					bool flag=false;
 
@@ -286,6 +289,18 @@ class ScannerClass
 				return -1;
 		}
 		*/
+		int symbol_detector(char ch)
+		{
+			char symbol[10]={';',':',',','<','>','+','=','-','*','/'};
+			for(int i=0;i<10;i++)
+			{
+				if(ch==symbol[i])
+				{
+					return (i+1);//1-2-3.... = true
+				}
+			}
+			return 0;//0 = false
+		}
 
 		bool end_of_file()
 		{
@@ -304,7 +319,7 @@ class ScannerClass
 int main()
 {	
 	
-	string file_name = "file path";
+	string file_name = "test.txt";
 
 	ScannerClass hi;
 	LinkedList all_str;
@@ -317,10 +332,6 @@ int main()
 		//cout<<str<<endl;
 	}
 
-	
-
-
-
 	HastTable t1;
 	Node* ntemp;
 	ntemp=all_str.head;
@@ -332,15 +343,13 @@ int main()
 
 	}
 
-/*
-
+	/*
 	t1.hashing("position");
 	t1.hashing("rate");
 	t1.hashing("initial");
 	t1.hashing("positino");//"positno" hash id equal to position
 	t1.hashing("position");//if compiler arrive to repetitive identifire
-
-*/
+	*/
 
 	t1.printTable();
 
