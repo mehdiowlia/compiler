@@ -304,7 +304,7 @@ class ScannerClass
 int main()
 {	
 	
-	string file_name = "/home/cloud/programming/test/test4.txt";
+	string file_name = "file path";
 
 	ScannerClass hi;
 	LinkedList all_str;
