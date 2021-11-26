@@ -1,5 +1,5 @@
 # compiler
-🚫the compiler is not complited !!!
+🚫the compiler is not completed !!!
 
 it is a very simple compiler with c++.
 
@@ -10,9 +10,9 @@ the grammer of the language is in the "grammer.pdf" file.
 ***
 ## TODO
 - [ ] all the files need some edits 
->- [ ] linked list in "first try.cpp" file is not compilited
+>- [ ] linked list in "first try.cpp" file is not completed
 >- [ ] tree in "tree.cpp" file is not compilited
->- [ ] scanner in "starting scanner.cpp" file is not compilited
+>- [ ] scanner in "starting scanner.cpp" file is not completed
 >- [ ] etc
 - [ ] some file should added in future
 >- [ ] compiler scanner
